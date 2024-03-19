@@ -1,15 +1,17 @@
-# adso2613934 
+# ADSO2613934
 ---
 
-## TGO en analisis y desarollo del sofware
+## TGO analisis y desarrollo de sotfware
 
-**lista de temas** publico
+<!-- para crear una tabla en markdown-->
 
-| temas | tipo |
-|----------|-------------:|
-|1.php| php orientacion a objetos |
-|2.pdo| objetos de datos de php |
-|3.mvc| modelo vista controlador de php |
-|4.q.laravel| framevork en php |
+| Temas |tipo | 
+|----------|--------|
+|1. POO |   PHP orientado a Objetos |
+|2. PDO |   Objetos de datos en PHP  |
+|3. MVC |   Modelo vista controlador |
+|2. Laravel |   Framework en PHP  |
 
- ![hollow](http://tinyurl.com/3emj26t9)
+<!-- para insertar una imagen en markdown-->
+
+![Hollow](http://tinyurl.com/39vx4fjx)  
