@@ -166,6 +166,12 @@ body {
             }
         }
 
+        section.scroll{
+        scrollbar-width: none;
+        overflow-y: scroll;
+        height: 640px;
+        }
+
         footer {
             display: flex;
             justify-content: center;
@@ -326,9 +332,7 @@ main.catalogue {
     }
 
     section.scroll {
-        scrollbar-width: none;
-        overflow-y: scroll;
-        height: 640px;
+        
 
         form {
             display: flex;
@@ -535,7 +539,7 @@ main.view-game {
 /* ------------------
    03- LOGIN
 ------------------ */
-
+main.register,
 main.login {
 
     header {
@@ -547,7 +551,7 @@ main.login {
     }
 
     section {
-
+          
         form {
             display: flex;
             flex-direction: column;
@@ -586,8 +590,8 @@ main.login {
                     width: 300px;
 
                     &::placeholder {
-                        color: var(--color-fourth);
-                        opacity: 0.6;
+                        color: black;
+                        opacity: 0.2;
                         
                     }
                 }
@@ -625,10 +629,37 @@ main.login {
                     background: url(../images/btn-hover.png) no-repeat center;
                 }
 
-                .mask{
-                    mask-image: url(../images/);
+                a:is(:link, :visited){
+                    color:wheat;
+                    font-family:var(--ff-body);
+                    margin-top: 0.6rem;
+                    font-size:16px;
+                    font-weight: 700;
+                    justify-content: center;
+                }
+                
+
+                }
+                .border{
+                    cursor: pointer;
+                    position: absolute;
+                    left: 50px;
+                    top: 0;
                 }
 
+                .mask{
+                    mask-image:url(../images/shape-photo.svg);
+                    mask-repeat: no-repeat;
+                    mask-position: center top;
+                    object-fit: cover;
+                    align-self: center;
+                    position: relative;
+                    height: 200px;
+                    width: 200px;
+                }
+                
+                #photo{
+                    display: none;
                 }
             }
         }
