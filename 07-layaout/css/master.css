@@ -77,7 +77,7 @@ body {
                 .line {
                     fill: none;
                     transition: stroke-dasharray 400ms,
-                        stroke-dashoffset 400ms;
+                    stroke-dashoffset 400ms;
                     stroke: var(--color-fourth);
                     stroke-width: 4;
                     stroke-linecap: round;
@@ -166,10 +166,10 @@ body {
             }
         }
 
-        section.scroll{
-        scrollbar-width: none;
-        overflow-y: scroll;
-        height: 640px;
+        section.scroll {
+            scrollbar-width: none;
+            overflow-y: scroll;
+            height: 640px;
         }
 
         footer {
@@ -322,7 +322,7 @@ main.welcome {
 /* ------------------- */
 
 main.catalogue {
-   
+
     scrollbar-width: none;
     overflow: scroll;
 
@@ -332,7 +332,7 @@ main.catalogue {
     }
 
     section.scroll {
-        
+
 
         form {
             display: flex;
@@ -343,15 +343,16 @@ main.catalogue {
             input {
                 border: none;
                 background: url(../images/bg-filter.svg) no-repeat 250px center,
-                            url(../images/bg-input-filter.png) no-repeat center;
+                    url(../images/bg-input-filter.png) no-repeat center;
 
-              color: black;
-               font-size: 20px;
+                color: black;
+                font-size: 20px;
                 height: 50px;
                 width: 298px;
                 outline: none;
                 text-indent: 10px;
                 font-weight: bold;
+
                 &::placeholder {
                     opacity: 0.7;
                     color: var(--color-fourth);
@@ -384,7 +385,7 @@ main.catalogue {
 
             a:is(:link, :visited) {
                 background: url(../images/btn-view.pn)no-repeat center;
-               
+
                 color: var(--color-fourth);
                 height: 30px;
                 display: flex;
@@ -399,7 +400,7 @@ main.catalogue {
 
                 img {
                     width: 18px;
-                 
+
                 }
             }
 
@@ -540,6 +541,7 @@ main.view-game {
    03- LOGIN----register
 ------------------ */
 main.register,
+
 main.login {
 
     header {
@@ -551,7 +553,7 @@ main.login {
     }
 
     section {
-          
+
         form {
             display: flex;
             flex-direction: column;
@@ -560,7 +562,7 @@ main.login {
 
 
             div.form-group {
-               
+
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: column;
@@ -576,6 +578,7 @@ main.login {
                     align-items: center;
                     gap: 0.6rem;
                     font-size: 20px;
+                   
                 }
 
                 input {
@@ -592,7 +595,7 @@ main.login {
                     &::placeholder {
                         color: black;
                         opacity: 0.2;
-                        
+
                     }
                 }
 
@@ -605,7 +608,7 @@ main.login {
                     margin-right: 0.8rem;
                 }
 
-                button{
+                button {
                     background: url(../images/btn.png) no-repeat center;
                     color: var(--color-fourth);
                     border: none;
@@ -620,35 +623,36 @@ main.login {
                     width: 300px;
                     margin-top: 2rem;
 
-                button:is(:hover){
-                    background-color: var(--color-fourth);
-                    transform: scale(1.02) translateY(-5px);
-                }
-            
-                button:is(:active){
-                    background: url(../images/btn-hover.png) no-repeat center;
+                    button:is(:hover) {
+                        background-color: var(--color-fourth);
+                        transform: scale(1.02) translateY(-5px);
+                    }
+
+                    button:is(:active) {
+                        background: url(../images/btn-hover.png) no-repeat center;
+                    }
+
+                    a:is(:link, :visited) {
+                        color: wheat;
+                        font-family: var(--ff-body);
+                        margin-top: 0.6rem;
+                        font-size: 16px;
+                        font-weight: 700;
+                        justify-content: center;
+                    }
+
+
                 }
 
-                a:is(:link, :visited){
-                    color:wheat;
-                    font-family:var(--ff-body);
-                    margin-top: 0.6rem;
-                    font-size:16px;
-                    font-weight: 700;
-                    justify-content: center;
-                }
-                
-
-                }
-                .border{
+                .border {
                     cursor: pointer;
                     position: absolute;
                     left: 50px;
                     top: 0;
                 }
 
-                .mask{
-                    mask-image:url(../images/shape-photo.svg);
+                .mask {
+                    mask-image: url(../images/shape-photo.svg);
                     mask-repeat: no-repeat;
                     mask-position: center top;
                     object-fit: cover;
@@ -657,10 +661,79 @@ main.login {
                     height: 200px;
                     width: 200px;
                 }
-                
-                #photo{
+
+                #photo {
                     display: none;
                 }
+
+
+ /* ------------------
+ 04-Dashboard
+------------------ */
+
+                label{
+                    
+                    margin-top:1.5rem ;
+
+                    img.img-users {
+
+                        position: absolute;
+                        left: 25px;
+                        top: px;
+    
+                    }
+    
+                    img.module-users {
+                        
+                        position: absolute;
+                        left: 100px;
+                        width: 150px;
+    
+                    }
+                    img.view-users{
+                
+                        position: absolute;
+                        left: 248px;
+                        margin-top: 3rem;
+                        cursor: pointer;
+                         
+                    }
+    
+                    img.rows-let{
+                        position: absolute;
+                        left: 30px;
+                        margin-top: 4rem;
+                         
+                    }
+                    img.img-figure{
+                        position: absolute;
+                        left: 25px;
+                      margin-bottom:20px ;
+                      
+                    }
+                    img.module-categories{
+                        position: absolute;
+                        left: 100px;
+                        width: 195px;
+                      
+                    }
+
+                    img.img-games{
+                        position: absolute;
+                        left: 20px;
+                        margin-bottom:15px ;
+                    }
+
+                    img.rows-gam{
+                        position: absolute;
+                        left: 30px;
+                        margin-top: 4rem;
+                         
+                    }
+                }
+
+                
+
             }
         }
     }
