@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameApp - Dashboard</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+    <main class="login">
+        <header>
+            <a href="javascript:;" class="btn-back">
+                <img src="images/btn-back.svg" alt="Back">
+            </a>
+            <img src="images/titulo-Users.svg" alt="">
+            <svg class="btn-burger" viewBox="0 0 100 100" width="80">
+                <path class="line top"
+                    d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                <path class="line middle" d="m 70,50 h -40" />
+                <path class="line bottom"
+                    d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+            </svg>
+        </header>
+        <nav class="nav">
+            <img src="" alt="" class="title-menu">
+            <menu>
+                <a href="login.html">
+                    <img src="images/icon-login.svg" alt="Login">Login
+                </a>
+                <a href="register.html">
+                    <img src="images/icon-register.svg" alt="Register">Register
+                </a>
+                <a href="catalogue.html">
+                    <img src="images/icon-catalogue.svg" alt="Catalogue">Catalogue
+                </a>
+            </menu>
+        </nav>
+        <section>
+            <form action="dashboard.html" method="get">
+                <div class="form-group">
+                    <label>
+                        <img class="add-users" src="images/add.svg" alt="">
+                        <img src="images/add-caja.svg" alt="caja" >
+                        <img  class=" img-users" src="images/ico-users.svg" alt="users">
+                        <img  class="module-users"  src="images/module-users.svg" alt="module">
+                        <button type="submit">
+                        <img class="view-users" src="images/view-users.svg" alt="">
+                        </button>
+                        <img   class="rows-let"  src="images/rows.svg" alt="">
+                    </label>
+                </div>
+              
+                
+            </form>
+        </section>
+    </main>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+
+            //-------------------------------------------------
+            $('header').on('click','.btn-burger', function(){
+                $(this).toggleClass('active')
+                $('.nav').toggleClass('active')
+            });
+            //-------------------------------------------------
+                //este sirve para el ojito de la contraseña
+            //-------------------------------------------------
+            $togglePass = false
+            $('section').on('click','.icon-eye', function(){
+
+                !$togglePass ? $(this).next().attr('type', 'text')
+                             : $(this).next().attr('type', 'password')
+
+                !$togglePass ? $(this).next().attr('src', 'images/ico-eye-close.svg')
+                             : $(this).next().attr('src', 'images/ico-eye.svg')
+                
+                             $togglePass = !$togglePass     
+            });
+            //--------------------------------------------
+    </script>
+</body>
+
+</html>
