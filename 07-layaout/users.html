@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <main class="login">
+    <main class="users">
         <header>
             <a href="javascript:;" class="btn-back">
                 <img src="images/btn-back.svg" alt="Back">
@@ -39,50 +39,179 @@
                 </a>
             </menu>
         </nav>
-        <section>
+        <section class="scroll">
+            <a href="">
+                <img src="images/add.svg" alt="">
+            </a>
             <form action="dashboard.html" method="get">
                 <div class="form-group">
                     <label>
-                        <img class="add-users" src="images/add.svg" alt="">
-                        <img src="images/add-caja.svg" alt="caja" >
-                        <img  class=" img-users" src="images/ico-users.svg" alt="users">
-                        <img  class="module-users"  src="images/module-users.svg" alt="module">
-                        <button type="submit">
-                        <img class="view-users" src="images/view-users.svg" alt="">
-                        </button>
-                        <img   class="rows-let"  src="images/rows.svg" alt="">
+                        <img class="users-picture" src="images/user-picture.svg" alt="users">
+                        <p class="gere-add">
+                            Jeremias Springfield
+                            <small>Admin</small>
+                        </p>
+                        <div class="actions">
+                            <a href="" class="busc">
+                                <img  src="images/busc.svg" alt="">
+                            </a>
+                            <a href="" class="edit">
+                                <img  src="images/lapiz.svg" alt="">
+                            </a>
+                           
+                            <a href="" class="delete">
+                                <img  src="images/elimina.svg" alt="">
+                            </a>
+                        </div>
                     </label>
                 </div>
-              
-                
+                <div class="form-group">
+                    <label>
+                        <img class="users-lore" src="images/lore.svg" alt="users">
+                        <p class="lore-add">
+                            Lorena Torres Zapata
+                            <br>
+                            <small>Admin</small>
+                        </p>
+                        <div class="actions">
+                            <a href="" class="busc">
+                                <img  src="images/busc.svg" alt="">
+                            </a>
+                            <a href="" class="edit">
+                                <img  src="images/lapiz.svg" alt="">
+                            </a>
+                           
+                            <a href="" class="delete">
+                                <img  src="images/elimina.svg" alt="">
+                            </a>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <img class="users-jhon" src="images/jhon.svg" alt="users">
+                        <p class="gere-add">
+                            Jhon Jairo Lopez
+                            <br>
+                            <small>Admin</small>
+                        </p>
+                        <div class="actions">
+                            <a href="" class="busc">
+                                <img  src="images/busc.svg" alt="">
+                            </a>
+                            <a href="" class="edit">
+                                <img  src="images/lapiz.svg" alt="">
+                            </a>
+                           
+                            <a href="" class="delete">
+                                <img  src="images/elimina.svg" alt="">
+                            </a>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <img class="users-jhon" src="images/jhon.svg" alt="users">
+                        <p class="gere-add">
+                            Jhon Jairo Lopez
+                            <br>
+                            <small>Admin</small>
+                        </p>
+                        <div class="actions">
+                            <a href="" class="busc">
+                                <img  src="images/busc.svg" alt="">
+                            </a>
+                            <a href="" class="edit">
+                                <img  src="images/lapiz.svg" alt="">
+                            </a>
+                           
+                            <a href="" class="delete">
+                                <img  src="images/elimina.svg" alt="">
+                            </a>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <img class="users-jhon" src="images/jhon.svg" alt="users">
+                        <p class="gere-add">
+                            Jhon Jairo Lopez
+                            <br>
+                            <small>Admin</small>
+                        </p>
+                        <div class="actions">
+                            <a href="" class="busc">
+                                <img  src="images/busc.svg" alt="">
+                            </a>
+                            <a href="" class="edit">
+                                <img  src="images/lapiz.svg" alt="">
+                            </a>
+                           
+                            <a href="" class="delete">
+                                <img  src="images/elimina.svg" alt="">
+                            </a>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <img class="users-jhon" src="images/jhon.svg" alt="users">
+                        <p class="gere-add">
+                            Jhon Jairo Lopez
+                            <br>
+                            <small>Admin</small>
+                        </p>
+                        <div class="actions">
+                            <a href="" class="busc">
+                                <img  src="images/busc.svg" alt="">
+                            </a>
+                            <a href="" class="edit">
+                                <img  src="images/lapiz.svg" alt="">
+                            </a>
+                           
+                            <a href="" class="delete">
+                                <img  src="images/elimina.svg" alt="">
+                            </a>
+                        </div>
+                    </label>
+                </div>
             </form>
         </section>
+        <div class="paginate">
+            <a href="">
+                <img src="images/right.svg" alt="">
+            </a>
+            <span>01/03</span>
+            <a href="">
+                <img src="images/left.svg" alt="">
+            </a>
+        </div>
     </main>
 
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script>
 
-            //-------------------------------------------------
-            $('header').on('click','.btn-burger', function(){
-                $(this).toggleClass('active')
-                $('.nav').toggleClass('active')
-            });
-            //-------------------------------------------------
-                //este sirve para el ojito de la contraseña
-            //-------------------------------------------------
-            $togglePass = false
-            $('section').on('click','.icon-eye', function(){
+        //-------------------------------------------------
+        $('header').on('click', '.btn-burger', function () {
+            $(this).toggleClass('active')
+            $('.nav').toggleClass('active')
+        });
+        //-------------------------------------------------
+        //este sirve para el ojito de la contraseña
+        //-------------------------------------------------
+        $togglePass = false
+        $('section').on('click', '.icon-eye', function () {
 
-                !$togglePass ? $(this).next().attr('type', 'text')
-                             : $(this).next().attr('type', 'password')
+            !$togglePass ? $(this).next().attr('type', 'text')
+                : $(this).next().attr('type', 'password')
 
-                !$togglePass ? $(this).next().attr('src', 'images/ico-eye-close.svg')
-                             : $(this).next().attr('src', 'images/ico-eye.svg')
-                
-                             $togglePass = !$togglePass     
-            });
-            //--------------------------------------------
+            !$togglePass ? $(this).next().attr('src', 'images/icon-eye-close.svg')
+                : $(this).next().attr('src', 'images/ico-eye.svg')
+
+            $togglePass = !$togglePass
+        });
+        //--------------------------------------------
     </script>
 </body>
 
