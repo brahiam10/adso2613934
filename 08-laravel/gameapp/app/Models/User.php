@@ -50,4 +50,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+//relationship: user has many games
+
+public function games(){
+    return $this->hasMany('App\Models\Game');
+}
+
+//relationship: user has many collections
+
+public function collections(){
+    return $this->hasMany('App\Models\Collection');
+}
+
 }

@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
     {
         Category::create([
             'name'        => 'Nintendo Switch',
-            'manufaturer' => 'Nintendo',
+            'manufacturer' => 'Nintendo',
             'releasedate' => '2017-03-03',
             'description' => 'Lorem ipsum dolor'
 

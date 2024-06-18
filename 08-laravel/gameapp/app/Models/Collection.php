@@ -17,4 +17,17 @@ class Collections extends Model
         'game_id',
         'user_id'
     ];
+
+    //relationship: collections belongs to user
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+
+    //relationship: game belongs to collection
+    public function game(){
+        return $this->belongsTo('App\Models\Game');
+    }
+
+
 }
