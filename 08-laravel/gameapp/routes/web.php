@@ -1,58 +1,51 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('catalogue', function () {
+    return view('catalogue');
+});
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/games/list', function () {
     $games = App\Models\Game::all();
-    //echo var_dump($games);
     dd($games->toArray());
 });
 
-
-// Route::get('/game/{id}', function ($id) {
-//     $game = App\Models\Game::find($id);
-//      //echo var_dump($games);
-//      dd($game->toArray());
-//  });
-
-Route::get('/game/{id}', function ($id) {
+Route::get('/game/{id}', function () {
     $game = App\Models\Game::find(request()->id);
-    //echo var_dump($games);
     dd($game->toArray());
 });
 
 Route::get('/games/', function () {
     $games = App\Models\Game::all();
-    //echo var_dump($games);
     return view('listgames')->with('games', $games);
 });
 
-Route::get('/users/', function () {
-    $users = App\Models\User::limit(20)->get();
+Route::get('users/take:20', function () {
+    $user = App\Models\User::take(20)->get();
 
-$code = "<table style='border-collapse: collapse; margin-inline: auto; font-family: Arial'>
-                    <tr>
-                        <th style='background: gray; color: white; padding:0.4rem'> Id </th>
-                        <th style='background: gray; color: white; padding:0.4rem'> Fullname </th>
-                        <th style='background: gray; color: white; padding:0.4rem'> Age </th>
-                        <th style='background: gray; color: white; padding:0.4rem'> Created At </th>
-                    </tr>";
-foreach ($users as $user) {
-    $code .= "<tr>";
-    $code .=    "<td style='border: 1px solid gray; padding:0.4rem'>" . $user->id . "</td>";
-    $code .=    "<td style='border: 1px solid gray; padding:0.4rem'>" . $user->fullname . "</td>";
-    $code .=    "<td style='border: 1px solid gray; padding:0.4rem'>" . Carbon\Carbon::parse($user->birthdate)->age . " years old</td>";
-    $code .=    "<td style='border: 1px solid gray; padding:0.4rem'>" . $user->created_at->diffForHumans() . "</td>";
-    $code .= "</tr>";
-}
-
-return $code . "</table>";
+    foreach ($user as $u) {
+        echo '<table border="1">'
+            . '<tr>'
+            . '<td>' . $u->fullname .  '</td>'
+            . '<td>' . Carbon\Carbon::parse($u->birthdate)->age . ' years old' . '</td>'
+            . '<td>' . $u->created_at->diffForHumans() . '</td>'
+            . '</tr>' .
+            '</table>';
+    }
+});
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
-
+// require _DIR_ . '/auth.php';
