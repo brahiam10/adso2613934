@@ -10,6 +10,7 @@
         <img src="{{ asset('images/slide01.png') }}" alt="Slide01">
         <img src="{{ asset('images/slide02.png') }}" alt="Slide02">
         <img src="{{ asset('images/slide03.png') }}" alt="Slide03">
+        
     </section>
     <footer>
         <a href={{ url('catalogue') }} class="btn btn-explore">

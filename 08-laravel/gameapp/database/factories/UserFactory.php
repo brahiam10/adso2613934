@@ -29,7 +29,7 @@ class UserFactory extends Factory
     $name  = ($gender == 'female') ? $name = fake()->firstNamefemale()
                                    : $name = fake()->firstNamemale();
 
-    $photo = fake()->image(public_path('images/'), 140, 140, null, false);                                
+    $photo = fake()->image(public_path('images'), 140, 140, null, false);                                
 
         return [
             'document'          => fake()->isbn13(),

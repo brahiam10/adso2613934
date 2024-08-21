@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
      $user = new User;
      $user->document = '1002591304';
      $user->fullname = 'Brahian agudelo';
-     $user->gender = 'Masculino';
+     $user->gender = 'Male';
      $user->birthdate = '2001-01-09';
      $user->phone = '3152132573';
      $user->email = 'brahianamarin23@gmail.com';
