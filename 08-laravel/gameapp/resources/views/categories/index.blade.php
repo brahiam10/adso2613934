@@ -1,13 +1,13 @@
 @extends('layouts.app')
-@section('title', 'GameApp - Dashboard')
+@section('title', 'GameApp - Categories')
 @section('class', 'users')
 
 @section('content')
     <header>
-        <a href={{ url('dashboard') }} class="btn-back">
+        <a href={{ url('categories') }} class="btn-back">
             <img src={{ asset('images/btn-back.svg') }} alt="Back">
         </a>
-        <img src="images/titulo-Users.svg" alt="">
+        <p style='color:white';  >Categories</p>
         <svg class="btn-burger" viewBox="0 0 100 100" width="80">
             <path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
             <path class="line middle" d="m 70,50 h -40" />
@@ -17,21 +17,14 @@
     </header>
     @include('layouts.menuburger')
     
-        <a href={{ url('users/create') }} class="btn-add">
+        <a href={{ url('categories/create') }} class="btn-add">
               <img src="images/add.svg" alt="">
         </a>
 
         <div class="options-info-resources">
-
-        <a href={{ url('export/users/pdf') }} class="pdf">
-            <img src={{ asset('images/ico-pdf.svg') }} alt="" class="btn-short-img">
-        </a>
-
         <input name="qsearch" id="form-filter-input" type="text" placeholder="Filter" class="qsearch">
 
-        <a href={{ url('export/users/excel') }} class="excel">
-            <img src={{ asset('images/ico-excel.svg') }} alt="" class="btn-short-img">
-        </a>
+      
 
 
     </div>
@@ -39,25 +32,24 @@
     <div class="loader"></div>
     <div id="list">
     <section class="scroll">
-            @foreach ($users as $user)
+            @foreach ($categories as $category)
                 <div class="form-group">
                     <label>
-                        <img class="users-picture" src="{{ asset('images/' . $user->photo) }}" alt="user-photo">
+                        <img class="users-picture" src="{{ asset('images/' . $category->image) }}" alt="user-photo">
                         <p class="gere-add">
-                            {{ $user->fullname }}
-                            <strong>{{ $user->role }}</strong>
+                            {{ $category->name }}
                         </p>
                         <div class="actions">
-                            <a href="{{ route('users.show', $user->id) }}" class="edit">
+                            <a href="{{ route('categories.show', $category->id) }}" class="edit">
                                 <img src="images/busc.svg" alt="">
                             </a>
-                            <a href="{{ url('users/' . $user->id . '/edit') }}" class="edit">
+                            <a href="{{ url('categories/' . $category->id . '/edit') }}" class="edit">
                                 <img src="images/lapiz.svg" alt="">
                             </a>
-                            <a href="javascript:;" class="btn-delete" data-fullname="{{ $user->fullname }}">
+                            <a href="javascript:;" class="btn-delete" data-fullname="{{ $category->name }}">
                                 <img src="images/elimina.svg" alt="">
                             </a>
-                            <form action="{{ url('users/'. $user->id) }}" method="post" style="display:none">
+                            <form action="{{ url('categories/'. $category->id) }}" method="post" style="display:none">
                                 @csrf
                                 @method('delete')
                             </form>

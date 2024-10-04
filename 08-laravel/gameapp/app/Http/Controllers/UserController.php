@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
-use App\Models\User;
+use PDF;
+use App\Exports\UserExport;
 
 class UserController extends Controller
 {
@@ -97,12 +99,30 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
-    {
-        if ($user->delete()) {
+    public function destroy($id)
+    {  
+        $user=User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('users.index')->with('message', 'usuario eliminado exitosamente');
+       /*  if ($user->delete()) {
             return redirect('users')
                 ->with('message' . 'The user: ' . $user->fullname . ' was successfully deleted!');
-        }
+        } */
         //
     }
+    public function search(Request $request){
+        $users = User::names($request->q)->paginate(5);
+        return view('users.search')->with('users', $users);
+    }
+
+    public function pdf(){
+        $users = User::all();
+        $pdf = PDF::loadView('users.pdf', compact('users'));
+        return $pdf->download('allusers.pdf');
+    }
+
+    public function excel(){
+        return \Excel::download(new UserExport, 'allusers.xlsx');
+    }
+
 }

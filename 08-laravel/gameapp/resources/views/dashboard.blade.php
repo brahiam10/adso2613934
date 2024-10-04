@@ -35,7 +35,7 @@
                 <span class="rows">250 categ.</span>
             </aside>
             <img class="title" src="images/module-categories.svg" alt="">
-            <a href='users/categories.html'>
+            <a href='{{url('categories')}}'>
                 <img src="images/view-users.svg" alt="View">
             </a>
         </article>

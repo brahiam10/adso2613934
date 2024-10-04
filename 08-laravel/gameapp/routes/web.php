@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,7 +29,15 @@ Route::middleware('auth')->group(function () {
     //Get, Post, Put, Delete, head, patch, options, trace
     Route::resources([
             'users' => UserController::class,
+            'categories' => CategoryController::class,
+
     ]);
 });
+
+Route::post('users/search', [UserController::class, 'search']);
+Route::post('categories/search', [CategoryController::class, 'search']);
+
+Route::get('export/users/pdf', [UserController::class, 'pdf']);
+Route::get('export/users/excel', [UserController::class, 'excel']);
 
 require __DIR__. '/auth.php';
